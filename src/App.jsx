@@ -12,7 +12,7 @@ function App() {
           <img src={Logo} alt="Life Whispers Logo" className="mx-auto" />
         </div>
         <p className="text-gray-500">
-          Veeville. <span className="text-red-500">❤️</span> Life Whispers
+          Veeville. <span className="text-red-500">❤️</span> IndiaFirst Life
         </p>
       </header>
       <ProblemInput />
