@@ -14,7 +14,7 @@ const ProblemInput = () => {
       const result = await axios.post(
         "https://api.openai.com/v1/chat/completions",
         {
-          model: "gpt-3.5-turbo", // Using gpt-3.5-turbo with the chat/completions endpoint
+          model: "gpt-3.5-turbo",
           messages: [
             {
               role: "system",
@@ -45,38 +45,53 @@ const ProblemInput = () => {
     }
   };
 
-  const getRandomQuote = () => {
-    const quotes = [
-      "Family is not an important thing, it's everything.",
-      "The love of a family is life's greatest blessing.",
-      "In family life, love is the oil that eases friction.",
-    ];
-    return quotes[Math.floor(Math.random() * quotes.length)];
+  const handleClear = () => {
+    setProblem("");
+    setResponse("");
   };
 
   return (
-    <div className="max-w-lg mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
-      <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
-        <textarea
-          className="p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={problem}
-          onChange={(e) => setProblem(e.target.value)}
-          placeholder="Describe your problem..."
-          required
-        />
-        <button
-          type="submit"
-          className="py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
-        >
-          {loading ? "Processing..." : "Get Advice"}
-        </button>
-      </form>
+    <div className="max-w-xl mx-auto mt-12 p-8 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 shadow-2xl rounded-lg w-full">
+      <div className="w-full flex flex-col space-y-6">
+        <form onSubmit={handleSubmit} className="flex flex-col space-y-6">
+          <textarea
+            className="p-4 w-full border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-purple-300 text-gray-800 placeholder-gray-500"
+            value={problem}
+            onChange={(e) => setProblem(e.target.value)}
+            placeholder="Describe your problem..."
+            required
+          />
+          <div className="flex space-x-4">
+            <button
+              type="submit"
+              className="py-3 px-6 w-full bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105"
+            >
+              {loading ? (
+                <span className="animate-pulse">Processing...</span>
+              ) : (
+                "Get Advice"
+              )}
+            </button>
+            <button
+              type="button"
+              onClick={handleClear}
+              className="py-3 px-6 w-full bg-red-600 text-white rounded-lg hover:bg-red-700 transition-transform transform hover:scale-105"
+            >
+              Clear Response
+            </button>
+          </div>
+        </form>
 
-      {response && (
-        <div className="mt-6 p-4 bg-gray-100 rounded-lg shadow-md">
-          <p className="text-gray-700">{response}</p>
+        <div className="p-6 w-full bg-white bg-opacity-90 rounded-lg shadow-md min-h-[4rem] flex items-center justify-center">
+          {response ? (
+            <p className="text-gray-900 font-semibold">{response}</p>
+          ) : (
+            <p className="text-gray-400 italic">
+              Your advice will appear here...
+            </p>
+          )}
         </div>
-      )}
+      </div>
     </div>
   );
 };
