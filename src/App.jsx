@@ -3,10 +3,10 @@ import ProblemInput from "./ProblemInput";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center items-center montserrat-me">
+    <div className="min-h-screen bg-[#f1f3c2] flex flex-col justify-center items-center">
       <header className="text-center mb-8">
-        <h1 className="text-3xl font-bold text-gray-800">LIFE WHISPERS</h1>
-        <p className="text-gray-600 mt-2">
+        <h1 className="text-4xl font-bold text-[#a1d6b2]">LIFE WHISPERS</h1>
+        <p className="text-[#e8b86d] mt-2">
           Get advice as if from a family member
         </p>
       </header>
