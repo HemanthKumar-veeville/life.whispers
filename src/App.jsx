@@ -7,13 +7,13 @@ import BackgroundImage from "./assets/BG.png"; // Import your background image
 
 function App() {
   return (
-    <div className="h-screen bg-[#FDF0E6] flex flex-col justify-center items-between">
+    <div className="bg-[#FDF0E6] flex flex-col justify-center items-between">
       <header className="flex flex-col items-center mb-8 mt-8">
         <div className="w-64 h-20">
           <img src={Logo} alt="Life Whispers Logo" className="mx-auto" />
         </div>
         <p className="text-gray-500 w-fit text-center mr-11">
-          Veeville <span className="text-red-500">❤️</span> IndiaFirst Life
+          Veeville. <span className="text-red-500">❤️</span> IndiaFirst Life
         </p>
       </header>
       <div
@@ -27,10 +27,12 @@ function App() {
       >
         <ProblemInput />
       </div>
-      <footer className="mt-16">
-        <div className="h-24 w-screen bg-white flex justify-around items-center">
-          <img src={IFL} alt="Footer Logo" className=" w-40" />
-          <img src={Veeville} alt="Footer Logo" className=" w-40" />
+      <footer className="mt-32">
+        <div className="h-24 w-screen bg-white flex justify-center items-center">
+          <div className="flex justify-between w-5/6">
+            <img src={IFL} alt="Footer Logo" className=" w-40" />
+            <img src={Veeville} alt="Footer Logo" className=" w-40" />
+          </div>
         </div>
       </footer>
     </div>

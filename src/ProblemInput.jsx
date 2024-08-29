@@ -51,11 +51,11 @@ const ProblemInput = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto mt-12 p-8 bg-white shadow-lg rounded-xl w-full">
+    <div className="max-w-lg mx-auto mt-12 p-8 bg-white shadow-lg rounded-3xl w-full">
       <div className="w-full flex flex-col space-y-4">
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
           <textarea
-            className="p-4 w-full border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E4A71] text-gray-800 placeholder-gray-500"
+            className="p-4 w-full border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1E4A71] text-gray-800 placeholder-gray-500"
             value={problem}
             onChange={(e) => setProblem(e.target.value)}
             placeholder="Describe your problem..."
@@ -64,7 +64,7 @@ const ProblemInput = () => {
           <div className="flex space-x-4">
             <button
               type="submit"
-              className="py-2 px-6 w-full bg-[#F5762A] text-white rounded-lg hover:bg-[#E16521] transition-transform transform hover:scale-105"
+              className="py-2 px-6 w-full bg-[#F5762A] text-white rounded-3xl hover:bg-[#E16521] transition-transform transform hover:scale-105 font-semibold"
             >
               {loading ? (
                 <span className="animate-pulse">Processing...</span>
@@ -75,7 +75,7 @@ const ProblemInput = () => {
             <button
               type="button"
               onClick={handleClear}
-              className="py-2 px-6 w-full bg-gray-400 text-white rounded-lg hover:bg-gray-500 transition-transform transform hover:scale-105"
+              className="py-2 px-6 w-full bg-gray-400 text-white rounded-3xl hover:bg-gray-500 transition-transform transform hover:scale-105 font-semibold"
             >
               Clear Response
             </button>
