@@ -51,11 +51,11 @@ const ProblemInput = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto mt-12 p-8 bg-white shadow-2xl rounded-lg w-full">
-      <div className="w-full flex flex-col space-y-6">
-        <form onSubmit={handleSubmit} className="flex flex-col space-y-6">
+    <div className="max-w-lg mx-auto mt-12 p-8 bg-white shadow-lg rounded-xl w-full">
+      <div className="w-full flex flex-col space-y-4">
+        <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
           <textarea
-            className="p-4 w-full border-2 border-[#285A88] rounded-lg focus:outline-none focus:ring-4 focus:ring-[#D1C5A4] text-gray-800 placeholder-gray-500"
+            className="p-4 w-full border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E4A71] text-gray-800 placeholder-gray-500"
             value={problem}
             onChange={(e) => setProblem(e.target.value)}
             placeholder="Describe your problem..."
@@ -64,7 +64,7 @@ const ProblemInput = () => {
           <div className="flex space-x-4">
             <button
               type="submit"
-              className="py-3 px-6 w-full bg-[#285A88] text-white rounded-lg hover:bg-[#1E4A71] transition-transform transform hover:scale-105"
+              className="py-2 px-6 w-full bg-[#F5762A] text-white rounded-lg hover:bg-[#E16521] transition-transform transform hover:scale-105"
             >
               {loading ? (
                 <span className="animate-pulse">Processing...</span>
@@ -75,18 +75,20 @@ const ProblemInput = () => {
             <button
               type="button"
               onClick={handleClear}
-              className="py-3 px-6 w-full bg-[#D1C5A4] text-gray-800 rounded-lg hover:bg-[#BFB08D] transition-transform transform hover:scale-105"
+              className="py-2 px-6 w-full bg-gray-400 text-white rounded-lg hover:bg-gray-500 transition-transform transform hover:scale-105"
             >
               Clear Response
             </button>
           </div>
         </form>
 
-        <div className="p-6 w-full bg-[#285A88] rounded-lg shadow-md min-h-[4rem] flex items-center justify-center">
+        <div className="p-4 w-full bg-[#E6F8F6] rounded-lg shadow-md min-h-[4rem] flex items-center justify-center">
           {response ? (
-            <p className="text-white font-semibold">{response}</p>
+            <p className="text-gray-700 font-semibold">{response}</p>
           ) : (
-            <p className="text-white italic">Your advice will appear here...</p>
+            <p className="text-gray-400 italic">
+              Your advice will appear here...
+            </p>
           )}
         </div>
       </div>
