@@ -7,7 +7,7 @@ import BackgroundImage from "./assets/BG.png"; // Import your background image
 
 function App() {
   return (
-    <div className=" bg-[#FDF0E6] flex flex-col justify-center items-between">
+    <div className="h-screen bg-[#FDF0E6] flex flex-col justify-center items-between">
       <header className="flex flex-col items-center mb-8 mt-8">
         <div className="w-64 h-20">
           <img src={Logo} alt="Life Whispers Logo" className="mx-auto" />
@@ -28,7 +28,7 @@ function App() {
         <ProblemInput />
       </div>
       <footer className="mt-16">
-        <div className="h-36 w-screen bg-white flex justify-around items-center">
+        <div className="h-24 w-screen bg-white flex justify-around items-center">
           <img src={IFL} alt="Footer Logo" className=" w-40" />
           <img src={Veeville} alt="Footer Logo" className=" w-40" />
         </div>
