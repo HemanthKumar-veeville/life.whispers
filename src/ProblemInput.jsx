@@ -51,11 +51,11 @@ const ProblemInput = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto mt-12 p-8 bg-[#4dbbbb] shadow-2xl rounded-lg w-full">
+    <div className="max-w-xl mx-auto mt-12 p-8 bg-white shadow-2xl rounded-lg w-full">
       <div className="w-full flex flex-col space-y-6">
         <form onSubmit={handleSubmit} className="flex flex-col space-y-6">
           <textarea
-            className="p-4 w-full border-2 border-[#009b9b] rounded-lg focus:outline-none focus:ring-4 focus:ring-[#009b9b] text-gray-800 placeholder-gray-500"
+            className="p-4 w-full border-2 border-[#B026FF] rounded-lg focus:outline-none focus:ring-4 focus:ring-[#F44CFF] text-gray-800 placeholder-gray-500"
             value={problem}
             onChange={(e) => setProblem(e.target.value)}
             placeholder="Describe your problem..."
@@ -64,7 +64,7 @@ const ProblemInput = () => {
           <div className="flex space-x-4">
             <button
               type="submit"
-              className="py-3 px-6 w-full bg-[#009b9b] text-white rounded-lg hover:bg-[#007a7a] transition-transform transform hover:scale-105"
+              className="py-3 px-6 w-full bg-[#F44CFF] text-white rounded-lg hover:bg-[#B026FF] transition-transform transform hover:scale-105"
             >
               {loading ? (
                 <span className="animate-pulse">Processing...</span>
@@ -75,20 +75,18 @@ const ProblemInput = () => {
             <button
               type="button"
               onClick={handleClear}
-              className="py-3 px-6 w-full bg-[#3d3d3d] text-white rounded-lg hover:bg-[#2b2b2b] transition-transform transform hover:scale-105"
+              className="py-3 px-6 w-full bg-[#FFF0B3] text-gray-800 rounded-lg hover:bg-[#FFE6A3] transition-transform transform hover:scale-105"
             >
               Clear Response
             </button>
           </div>
         </form>
 
-        <div className="p-6 w-full bg-[#009b9b] rounded-lg shadow-md min-h-[4rem] flex items-center justify-center">
+        <div className="p-6 w-full bg-[#F44CFF] rounded-lg shadow-md min-h-[4rem] flex items-center justify-center">
           {response ? (
             <p className="text-white font-semibold">{response}</p>
           ) : (
-            <p className="text-gray-200 italic">
-              Your advice will appear here...
-            </p>
+            <p className="text-white italic">Your advice will appear here...</p>
           )}
         </div>
       </div>
