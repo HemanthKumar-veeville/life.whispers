@@ -75,9 +75,6 @@ const ProblemInput = () => {
       {response && (
         <div className="mt-6 p-4 bg-gray-100 rounded-lg shadow-md">
           <p className="text-gray-700">{response}</p>
-          <p className="mt-4 text-sm text-gray-500 italic">
-            {getRandomQuote()}
-          </p>
         </div>
       )}
     </div>
